@@ -8,11 +8,14 @@
     width: 200px;
     height: 200px;
     border: 1px white solid;
-    margin-left: 1%;
-    box-shadow: 10px -10px 15px rgb(117, 116, 116);
+    margin-left: 5%;
     border-radius: 10%;
+    transition: 2s, linear;
 }
-
+.product img:hover{
+    box-shadow: 5px -18px 100px rgb(117, 116, 116);
+    transition: 2s, linear;
+}
 .product_title{
     text-align: center;
     font-size: 40px;
