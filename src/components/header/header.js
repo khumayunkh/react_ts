@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useRef} from "react";  
+import { useDispatch } from "react-redux";
+import { filteredProducts } from "../redux/producSlice/productSlice";
 import style from './header.module.css'
 
+
 function Header(){
+    const inputRef = useRef('') 
+    const dispatch = useDispatch()
+    const filterProducts = () =>{
+          dispatch(filteredProducts(inputRef.current.value))
+    }
     return(
         <div className={style.main}>
             <div className={style.container}>
@@ -15,7 +23,13 @@ function Header(){
                             <option>Sneakers</option>
                             <option>Caps</option> 
                         </select>
-                        <input className={style.input} type="text" placeholder="What are you shopping for"/>
+                        <input 
+                            className={style.input} 
+                            type="text" 
+                            placeholder="What are you shopping for"
+                            ref={inputRef}
+                            onChange={filterProducts} 
+                        />
                     </div>
                 </div>
             </div>
