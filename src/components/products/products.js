@@ -16,8 +16,12 @@ function Products(){
         <div className={style.products}>
             <div className={style.container}>
                 <div className={style.products_in}>
+                   <h1 className={style.product_title}> All Products </h1>
                     <div className={style.product}>
-                    {products.map(item => <img src={item.images}/>)}
+                    {products.map(item => <img src={item.images[0]}/>)}
+                    {products.map(item => <img src={item.images[1]}/>)}
+                    {products.map(item => <img src={item.images[2]}/>)}
+                    {products.map(item => <img src={item.images[3]}/>)}
                     </div>
                 </div>
             </div>
