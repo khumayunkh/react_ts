@@ -28,6 +28,9 @@ export const  productsSlice = createSlice({
             state.products = state.productsContainer.filter(item => item.category.toLowerCase().includes(action.payload) 
                 || item.title.toLowerCase().includes(action.payload) 
                 || item.brand.toLowerCase().includes(action.payload)); 
+        },
+        filterCAtegory :(state, action) =>{
+            
         }
     },
     extraReducers:(builder) => {

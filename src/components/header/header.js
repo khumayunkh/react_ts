@@ -5,11 +5,15 @@ import style from './header.module.css'
 
 
 function Header(){
-    const inputRef = useRef('') 
+    const inputRef = useRef('')
+    const optionRef = useRef('') 
     const dispatch = useDispatch()
     const filterProducts = () =>{
           dispatch(filteredProducts(inputRef.current.value))
     }
+    const filterByCategory = () =>{
+        dispatch(filteredProducts(inputRef.current.value))
+  }
     return(
         <div className={style.main}>
             <div className={style.container}>
@@ -18,10 +22,8 @@ function Header(){
                     <div>
                          <select className={style.wears}>
                             <option>Search By</option>
-                            <option>T-shirt</option>
-                            <option>Jeans</option>
-                            <option>Sneakers</option>
-                            <option>Caps</option> 
+                            <option onClick={filterByCategory} ref={optionRef}>smarphones</option>
+                            <option onClick={filterByCategory} ref={optionRef}>laptops</option>
                         </select>
                         <input 
                             className={style.input} 
