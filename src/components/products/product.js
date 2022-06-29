@@ -11,6 +11,7 @@ function Product({products}){
                     {products.map(item => 
                      <div className={style.product}>
                         <img src={item.images[0]}/>
+                        <img src={item.images[2]}/>
                      </div>
                     )}
                 </div>

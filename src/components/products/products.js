@@ -34,8 +34,3 @@ function Products(){
 }
 
 export default Products
-
-
-// onPageChange = (PageNumber) => {
-//     this.props.getUsers(this.props.pageSize, PageNumber);
-// }
