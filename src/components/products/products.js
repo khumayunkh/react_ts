@@ -19,7 +19,7 @@ function Products(){
                 <div className={style.products_in}>
                    <h1 className={style.product_title}> All Products </h1>
                     <div className={style.product}>
-                    {products.map(item =><NavLink to={'/profile/' + item.id}><img src={item.images[0]}/></NavLink>)}
+                    {products.map(item =><NavLink key={item.id} to={'/profile/' + item.id}><img src={item.images[0]}/></NavLink>)}
                     </div>
                 </div>
             </div>

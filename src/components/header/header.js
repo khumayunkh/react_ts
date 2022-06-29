@@ -1,18 +1,22 @@
 import React, {useRef} from "react";  
 import { useDispatch } from "react-redux";
-import { filteredProducts } from "../redux/producSlice/productSlice";
+import { filteredProducts, filterCategory } from "../redux/producSlice/productSlice";
 import style from './header.module.css'
 
 
 function Header(){
     const inputRef = useRef('')
     const optionRef = useRef('') 
+    const optionRefSmart = useRef('')
     const dispatch = useDispatch()
     const filterProducts = () =>{
           dispatch(filteredProducts(inputRef.current.value))
     }
-    const filterByCategory = () =>{
-        dispatch(filterByCategory(optionRef.current.value))
+    const filterByCategorySmartphones = () =>{
+        dispatch(filterCategory(optionRefSmart.current.value))
+    }
+    const filterByCategoryLaptops = () =>{
+        dispatch(filterCategory(optionRef.current.value))
         
   }
     return(
@@ -23,8 +27,8 @@ function Header(){
                     <div>
                          <select className={style.wears}>
                             <option>Search By</option>
-                            <option onClick={filterByCategory} ref={optionRef}>smarphones</option>
-                            <option onClick={filterByCategory} ref={optionRef}>laptops</option>
+                            <option onClick={filterByCategorySmartphones} ref={optionRefSmart}>smartphones</option>
+                            <option onClick={filterByCategoryLaptops} ref={optionRef}>laptops</option>
                         </select>
                         <input 
                             className={style.input} 
