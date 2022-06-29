@@ -12,7 +12,8 @@ function Header(){
           dispatch(filteredProducts(inputRef.current.value))
     }
     const filterByCategory = () =>{
-        dispatch(filteredProducts(inputRef.current.value))
+        dispatch(filterByCategory(optionRef.current.value))
+        
   }
     return(
         <div className={style.main}>

@@ -5,6 +5,7 @@ import axios from "axios";
 const initialState = {
     products : [],
     productsContainer :[],
+    productsCategory: [],
     error: null
 }
 
@@ -29,8 +30,8 @@ export const  productsSlice = createSlice({
                 || item.title.toLowerCase().includes(action.payload) 
                 || item.brand.toLowerCase().includes(action.payload)); 
         },
-        filterCAtegory :(state, action) =>{
-            
+        filterCategory :(state, action) =>{
+            state.productsContainer = state.productsCategory.filter(item =>item.category.toLowerCase().includes(action.payload))
         }
     },
     extraReducers:(builder) => {
@@ -48,5 +49,5 @@ export const  productsSlice = createSlice({
 
 
 
-export const {setProducts,filteredProducts} = productsSlice.actions
+export const {setProducts,filteredProducts, filterCategory} = productsSlice.actions
 export default productsSlice

@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { fetchProducts } from "../redux/producSlice/productSlice";
 import style from './products.module.css'
 
@@ -18,10 +19,7 @@ function Products(){
                 <div className={style.products_in}>
                    <h1 className={style.product_title}> All Products </h1>
                     <div className={style.product}>
-                    {products.map(item => <img src={item.images[0]}/>)}
-                    {products.map(item => <img src={item.images[1]}/>)}
-                    {products.map(item => <img src={item.images[2]}/>)}
-                    {products.map(item => <img src={item.images[3]}/>)}
+                    {products.map(item =><NavLink to={'/profile/' + item.id}><img src={item.images[0]}/></NavLink>)}
                     </div>
                 </div>
             </div>
