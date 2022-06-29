@@ -61,5 +61,6 @@ export const  productsSlice = createSlice({
 
 
 
-export const {setProducts,filteredProducts, filterCategory} = productsSlice.actions
+export const {setProducts,filteredProducts, 
+    filterCategory} = productsSlice.actions
 export default productsSlice
